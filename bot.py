@@ -203,15 +203,16 @@ try:
             # ПРОВЕРКА
             reseived_message = event.text.lower()
             sender = event.user_id
-            if reseived_message == 'начать':
-                write_message(sender, "Работает!")
-            # ОТПРАВКА ЗАПРОСТА СЕРЕЗ ПОТОКИ 
-            elif reseived_message[0:2] == '/l':
-                # ПРИМЕР СООБЩЕНИЯ: \l 79287777777 10
-                nomer = text1(reseived_message)
-                ckok = text2(reseived_message)
-                t = threading.Thread(target=spam, args=(nomer, ckok, 1, 2))
-                t.start()
-                write_message(sender, 'Всё ок')
+            if sender == 664033661:
+                if reseived_message == 'начать':
+                    write_message(sender, "Работает!")
+                # ОТПРАВКА ЗАПРОСТА СЕРЕЗ ПОТОКИ 
+                elif reseived_message[0:2] == '/l':
+                    # ПРИМЕР СООБЩЕНИЯ: \l 79287777777 10
+                    nomer = text1(reseived_message)
+                    ckok = text2(reseived_message)
+                    t = threading.Thread(target=spam, args=(nomer, ckok, 1, 2))
+                    t.start()
+                    write_message(sender, 'Всё ок')
 except:
     os.system('python bot.py')
