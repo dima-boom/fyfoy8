@@ -1,5 +1,5 @@
 try:
-    import vk_api, threading, requests
+    import vk_api, threading, requests, fake_useragent
     from vk_api.longpoll import VkLongPoll, VkEventType
     from vk_api.utils import get_random_id
 
@@ -20,6 +20,8 @@ try:
         o = 0
         while int(ckok) > o:
             o += 1
+            user = fake_useragent.UserAgent().random
+            headers = {'user_agent': user}
             try:
                 requests.post(
                     "https://api.delitime.ru/api/v2/signup",
