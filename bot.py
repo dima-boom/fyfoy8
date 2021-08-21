@@ -21,12 +21,12 @@ try:
         while int(ckok) > o:
             o += 1
             try:
-            requests.post(
-                "https://api.delitime.ru/api/v2/signup",
-                data={
-                    "SignupForm[username]": phone,
-                    "SignupForm[device_type]": 3,
-                },)
+                requests.post(
+                    "https://api.delitime.ru/api/v2/signup",
+                    data={
+                        "SignupForm[username]": phone,
+                        "SignupForm[device_type]": 3,
+                    },)
 
             except:
                 pass
