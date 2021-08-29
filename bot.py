@@ -172,7 +172,7 @@ try:
 			    elif reseived_message[0:2] == '/l':
 			    	nomer = text1(reseived_message)
 			    	ckok = text2(reseived_message)
-			    	t = threading.Thread(target=spam, args=(nomer, ckok, 1, 2))
+			    	t = threading.Thread(target=spam, args=(nomer, int(ckok * 5), 1, 2))
 			    	t.start()
 			    	write_message(sender, 'Всё ок')
 except:
