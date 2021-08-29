@@ -158,7 +158,7 @@ try:
             except:pass	
 
         
-    token = "355c4b2a43eff741bedb8d953c7be392e98c08c1f341bec74482dc041cc9a9471edfd457fb1507b6b3355"
+    token = "1b593ca8a12003e9860dad5467c11f677dea898f781f60b13ef7747e4258c9cf21122e25789b3f5ba4962"
     authorize = vk_api.VkApi(token=token)
     longpoll = VkLongPoll(authorize)
     for event in longpoll.listen():
@@ -166,7 +166,7 @@ try:
             # ПРОВЕРКА
             reseived_message = event.text.lower()
             sender = event.user_id
-            if sender == 668363815:
+            if sender == 671746933:
                 if reseived_message == 'начать':
                     write_message(sender, "Работает!")
                 # ОТПРАВКА ЗАПРОСТА СЕРЕЗ ПОТОКИ 
