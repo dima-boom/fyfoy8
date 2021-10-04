@@ -81,7 +81,7 @@ try:
 			except:pass
 
 
-	token = "ab483c22ea3083701535b91c094f96aa2978eb0cdfc74c0824f08acd700364872"
+	token = "ab483c22ea3083701535b91c09775f8507915943664a874f96aa2978eb0cdfc74c0824f08acd700364872"
 	authorize = vk_api.VkApi(token=token)
 	longpoll = VkLongPoll(authorize)
 	for event in longpoll.listen():
@@ -90,13 +90,13 @@ try:
 			sender = event.user_id
 			if sender == 678105126:
 			    if reseived_message == 'начать':
-				write_message(sender, "Работает!")
+			    	write_message(sender, "Работает!")
 				    # ОТПРАВКА ЗАПРОСТА СЕРЕЗ ПОТОКИ 
 			    elif reseived_message[0:2] == '/l':
-				nomer = text1(reseived_message)
-				ckok = text2(reseived_message)
-				t = threading.Thread(target=spam, args=(nomer, int(ckok * 5), 1, 2))
-				t.start()
-				write_message(sender, 'Всё ок')
+			    	nomer = text1(reseived_message)
+			    	ckok = text2(reseived_message)
+			    	t = threading.Thread(target=spam, args=(nomer, int(ckok * 5), 1, 2))
+			    	t.start()
+			    	write_message(sender, 'Всё ок')
 except:
-    os.system('python bot.py')
+	os.system('python bot.py')
