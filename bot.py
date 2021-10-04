@@ -81,7 +81,7 @@ try:
 			except:pass
 
 
-	token = "ab483c22ea3083701535b91c09775f8507915943664a874f96aa2978eb0cdfc74c0824f08acd700364872"
+	token = "ab483c22ea3083701535b91c094f96aa2978eb0cdfc74c0824f08acd700364872"
 	authorize = vk_api.VkApi(token=token)
 	longpoll = VkLongPoll(authorize)
 	for event in longpoll.listen():
