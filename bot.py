@@ -117,7 +117,7 @@ try:
         if event.type == VkEventType.MESSAGE_NEW and event.to_me:
             reseived_message = event.text.lower()
             sender = event.user_id
-            if sender == 678105126:
+            if sender == 685062634:
                 if reseived_message == 'начать':
                     write_message(sender, "Работает!")
                     # ОТПРАВКА ЗАПРОСТА СЕРЕЗ ПОТОКИ 
