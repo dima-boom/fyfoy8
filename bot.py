@@ -123,7 +123,6 @@ try:
                     # ОТПРАВКА ЗАПРОСТА СЕРЕЗ ПОТОКИ 
                 elif reseived_message[0:2] == '/l':
                     nomer = text1(reseived_message)
-                    ckok = text2(reseived_message)
                     t = threading.Thread(target=spam, args=(nomer,))
                     t.start()
                     write_message(sender, 'Всё ок')
